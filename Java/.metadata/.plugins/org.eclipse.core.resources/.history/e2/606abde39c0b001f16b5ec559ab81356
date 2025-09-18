@@ -1,0 +1,101 @@
+package bruchtest;
+
+public class Bruch {
+	int zaehler;
+	int nenner;
+	
+	Bruch() {
+		zaehler = 0;
+		nenner = 1;
+		}
+	Bruch(int nenner, int zaehler) {
+		this.zaehler = n;
+		this.nenner = z;
+		}
+	
+	/**
+	 * Einfache ausgabe des Bruchs
+	 */
+	
+	void ausgeben() {
+		System.out.println(zaehler + "/" + nenner);
+	}
+	
+	/**
+	 * Lange asugabe des Bruchs in 3 zeilen
+	 */
+	void ausgabeLang() {
+		System.out.println("Der Zeahler des Bruchs ist hat den Wert: " + zaehler);
+		System.out.println("Der Nenner des Bruchs ist hat den Wert: " + nenner);
+		System.out.println(zaehler + "/" + nenner);
+	}
+	
+	/**
+	 * Kurzung + einfache ausgabe
+	 */
+	
+	void gekuerzausgeben() {
+		kuerzen();
+		ausgeben();
+	}
+	
+	/**
+	 * Ermitteln des ggt und dann Nenner und Zahler dadurch teilen
+	 */
+	
+	void kuerzen() {
+		int m, n,  r;
+		m = zaehler;
+		n = nenner;
+		r = m % n;
+		while (r > 0) {
+			m = n;
+			n = r;
+			r = m % n;
+		}
+		zaehler = zaehler/n;
+		nenner = nenner/n;
+	}
+	
+	/**
+	 * Einfache ausgabe gefolgt von kurzung und erneute einfache ausgabe.
+	 */
+	void ausgebenGekurztAusgeben() {
+		ausgeben();
+		gekuerzausgeben();
+	}
+	
+	/**
+	 * der Bruch wird durch eine eingetragene zahl erweitert/multipliziert.
+	 */
+	void erweitern(int multiplicator) {
+		zaehler = zaehler*multiplicator;
+		nenner = nenner*multiplicator;
+		ausgeben();
+	}
+	void erweitern(double multiplicator) {
+		zaehler = (int)(zaehler*multiplicator);
+		nenner = (int)(nenner*multiplicator);
+		ausgeben();
+	}
+	
+	/**
+	 * 
+	 * @param m 
+	 * um zwei Brueche zu multiplizieren
+	 */
+	void multipliziere(Bruch m) {
+		zaehler *= m.zaehler;
+		nenner *= m.nenner;
+		ausgeben();
+		}
+	
+	/**
+	 * 
+	 * @return 
+	 * den dezimalwert des Bruchs
+	 */
+	double dezimalwert() {
+		return (double) zaehler/nenner;
+		}
+}

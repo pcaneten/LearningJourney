@@ -1,0 +1,29 @@
+package arraySchleifen;
+
+public class ArraySchleifen {
+
+	public static void main(String[] args) {
+		int schleifenZaehler = 0;
+		int summe = 0; 
+	
+		// Anlegung und fuellung des Arrays
+		int[] zahlenArray = {2 ,7, 11, 30, 41, 42, 100, 200, 33, 45, 111, 1000};
+		// zahlenArray[0] = 333; // Aenderung des Inhalts an Position 0
+				
+		// Schleife durch alle Elemente des Arrays
+		while (schleifenZaehler <= (zahlenArray.length - 1)) {
+			// Summiert die Werte des Arrays
+			summe = summe + zahlenArray[schleifenZaehler];
+		
+			if (schleifenZaehler < (zahlenArray.length - 1)) {
+					// Ausgabe der Summe bis X Position in Array
+					System.out.println("Wert in Position " + schleifenZaehler + " ist " + zahlenArray[schleifenZaehler] + ". \nSumme bis hier ist: " + summe);
+			} else { 
+					// Ausgabe der Gesamtsumme
+					System.out.println("Letzte Position (" + schleifenZaehler + "): \nDie gesamt Summe des Arrays ist: " + summe);
+					}
+			schleifenZaehler++;
+		}
+			// System.out.println("Die summe des Arrays ist: " + summe);
+	}
+}

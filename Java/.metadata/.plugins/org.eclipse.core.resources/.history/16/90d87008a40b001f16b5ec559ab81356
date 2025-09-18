@@ -1,0 +1,37 @@
+package uebung05;
+
+public class Kreis {
+	private double radius;
+	private double pi = 3.1415926;
+	
+	Kreis(){
+		this.radius = 0;
+	}
+	Kreis(double radius){
+		this.radius = radius;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * the radius of the object
+	 */
+	double getRadius() {
+		return this.radius;
+	}
+	
+	public void setRadius(double radius) {
+		this.radius *= (double)radius;  
+	};
+	
+	double getUmfang() {
+		double umfang = 2.0 * pi * this.radius;
+		return umfang;
+	}
+	
+	double getFlaeche() {
+		double flaeche = pi * this.radius * this.radius;
+		return flaeche;
+	}
+
+}

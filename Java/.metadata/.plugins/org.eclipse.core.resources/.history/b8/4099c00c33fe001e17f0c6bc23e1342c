@@ -1,0 +1,56 @@
+package arraySchleifen;
+
+public class ArraySchleifen {
+
+	public static void main(String[] args) {
+		int schleifenZaehler = 0;
+		int summe = 0; 
+		int kleinsterWert; // Um den Minimal wert zu definieren
+		int groessterWert; // Um den Maximal wert zu definieren
+		int durschnitt;
+		
+		// Anlegung und fuellung des Arrays
+		int[] zahlenArray = {2 ,7, 11, 30, 41, 42, 100, 200, 33, 45, 111, 1000};
+		
+		
+		kleinsterWert = zahlenArray[0]; // Minimal Wert auf ersten Wert des Arrays gesetzt 
+		groessterWert = zahlenArray[0]; // Maximal Wert auf ersten Wert des Arrays gesetzt 
+			
+		// zahlenArray[0] = 333; // Aenderung des Inhalts an Position 0
+				
+		// Schleife durch alle Elemente des Arrays
+		while (schleifenZaehler < zahlenArray.length) {
+						
+			// Summiert die Werte des Arrays
+			summe = summe + zahlenArray[schleifenZaehler];
+						
+			// Der kleinste wert des Arrys wird definiert
+			if(zahlenArray[schleifenZaehler] < kleinsterWert) {
+				kleinsterWert = zahlenArray[schleifenZaehler];
+			} 
+						
+			// Der groesste wert des Arrys wird definiert
+			if(zahlenArray[schleifenZaehler] > groessterWert) {
+				groessterWert = zahlenArray[schleifenZaehler];
+			}
+		
+			//Ausgaben pro Wert im Array
+			/*if (schleifenZaehler < (zahlenArray.length - 1)) {
+					// Ausgabe der Summe bis X Position in Array
+					System.out.println("Wert in Position " + schleifenZaehler + " ist " + zahlenArray[schleifenZaehler] + ". \nSumme bis hier ist: " + summe);
+			} else { 
+					// Ausgabe der Gesamtsumme
+					System.out.println("Letzte Position (" + schleifenZaehler + "): \nDie gesamt Summe des Arrays ist: " + summe);
+					}*/
+			
+			// Position in Array zum naechsten Wert andern.
+			schleifenZaehler++;
+		}
+		durschnitt = summe / zahlenArray.length;
+				
+		System.out.println("Die summe des Arrays ist: " + summe); // Ausgabe Gesamtsumme
+		System.out.println("Kleinster Wert: " + kleinsterWert); // Ausgabe minimal Wert
+		System.out.println("Groesster Wert: " + groessterWert); // Ausgabe maximal Wert
+		System.out.println("Durschnitts Wert: " + durschnitt); // Ausgabe durschnitts Wert
+	}
+}

@@ -1,0 +1,23 @@
+package pruefziffer;
+
+public class Pruefziffer {
+
+	public static void main(String[] args) {
+		int[] idCardNummern = {6, 2, 5, 8, 4, 3, 1, 9, 7, 9};
+		int quersumme = 0;
+		for(int i = 0; i < idCardNummern.length; i++) {
+			if(i % 0 == 0) {
+				int querwert = 0;
+				if(idCardNummern[i] * 2 < 9) {
+					querwert = idCardNummern[i] * 2;
+				} else {
+					querwert = idCardNummern[i] * 2 - 9; 
+				}
+				quersumme +=  querwert;
+			}
+			System.out.println(quersumme);
+		}
+
+	}
+
+}

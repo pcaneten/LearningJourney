@@ -1,0 +1,18 @@
+package bruchtest;
+
+public class Bruchtest1 {
+
+	public static void main(String[] args) {
+		Bruch b = new Bruch();
+		b.zaehler = 25;
+		b.nenner = 5;
+		
+		Bruch a = new Bruch();
+		a.zaehler = 2;
+		a.nenner = 4;
+		
+		b.multipliziere(a);
+		b.gekuerzausgeben();
+
+	}
+}

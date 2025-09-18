@@ -1,0 +1,12 @@
+package bruchtest;
+
+public class Bruchtest1 {
+
+	public static void main(String[] args) {
+		Bruch bruch1 = new Bruch();
+		bruch1.ausgeben();
+		bruch1.zaehler = 24;
+		bruch1.nenner = 5;
+		
+	}
+}

@@ -1,0 +1,37 @@
+package bruchtest;
+
+public class Bruch {
+	int zaehler;
+	int nenner;
+	
+	void ausgeben() {
+		System.out.println(zaehler + "/" + nenner);
+	}
+	
+	void ausgabeLang() {
+		System.out.println("Der Zeahler des Bruchs ist hat den Wert: " + zaehler);
+		System.out.println("Der Nenner des Bruchs ist hat den Wert: " + nenner);
+		System.out.println(zaehler + "/" + nenner);
+	}
+	
+	void gekuerzausgeben() {
+		kuerzen();
+		ausgeben();
+	}
+	
+	void kuerzen() {
+		int m, n,  r;
+		m = zaehler;
+		n = nenner;
+		r = m % n;
+		while (r > 0) {
+			m = n;
+			n = r;
+			r = m % n;
+		}
+		zaehler = zaehler/n;
+		nenner = nenner/n;
+	}
+
+
+}

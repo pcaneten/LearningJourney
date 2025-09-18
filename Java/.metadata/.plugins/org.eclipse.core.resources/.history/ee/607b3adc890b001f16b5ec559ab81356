@@ -1,0 +1,67 @@
+package bruchtest;
+
+public class Bruch {
+	int zaehler;
+	int nenner;
+	
+	/**
+	 * Einfache ausgabe des Bruchs
+	 */
+	
+	void ausgeben() {
+		System.out.println(zaehler + "/" + nenner);
+	}
+	
+	/**
+	 * Lange asugabe des Bruchs in 3 zeilen
+	 */
+	void ausgabeLang() {
+		System.out.println("Der Zeahler des Bruchs ist hat den Wert: " + zaehler);
+		System.out.println("Der Nenner des Bruchs ist hat den Wert: " + nenner);
+		System.out.println(zaehler + "/" + nenner);
+	}
+	
+	/**
+	 * Kurzung + einfache ausgabe
+	 */
+	
+	void gekuerzausgeben() {
+		kuerzen();
+		ausgeben();
+	}
+	
+	/**
+	 * Ermitteln des ggt und dann Nenner und Zahler dadurch teilen
+	 */
+	
+	void kuerzen() {
+		int m, n,  r;
+		m = zaehler;
+		n = nenner;
+		r = m % n;
+		while (r > 0) {
+			m = n;
+			n = r;
+			r = m % n;
+		}
+		zaehler = zaehler/n;
+		nenner = nenner/n;
+	}
+	
+	/**
+	 * Einfache ausgabe gefolgt von kurzung und erneute einfache ausgabe.
+	 */
+	void ausgebenGekurztAusgeben() {
+		ausgeben();
+		gekuerzausgeben();
+	}
+	
+	/**
+	 * 
+	 */
+	void erweitern(int multiplicator) {
+		zaehler = zaehler*multiplicator;
+		nenner = nenner*multiplicator;
+		ausgeben()
+	}
+}

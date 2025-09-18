@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"msLizenzierung","l":"ClientLizenz"},{"p":"msLizenzierung","l":"Lizenz"},{"p":"msLizenzierung","l":"LizenzVerwaltung"},{"p":"msLizenzierung","l":"NetzCAL"},{"p":"msLizenzierung","l":"ServerLizenz"}];updateSearchResults();

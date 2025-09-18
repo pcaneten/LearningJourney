@@ -1,0 +1,21 @@
+package schleifenabbrueche;
+
+import javax.swing.JOptionPane;
+
+public class Schleifenabbrueche {
+
+	public static void main(String[] args) {
+		String eingabe;
+		int x= 0;
+		
+		while (x < 11) {
+			eingabe = JOptionPane.showInputDialog("Geben Sie eine Zahl ein: ");
+			x = Integer.parseInt(eingabe);
+			if (x < 11) {
+				System.out.println(x);
+			}
+		}
+
+	}
+
+}

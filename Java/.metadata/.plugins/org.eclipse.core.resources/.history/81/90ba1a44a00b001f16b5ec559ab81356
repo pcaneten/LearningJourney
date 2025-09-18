@@ -1,0 +1,10 @@
+package uebung05;
+
+public class Kreis {
+	double radius;
+	
+	Kreis(){
+		radius = 0.0;
+	}
+
+}

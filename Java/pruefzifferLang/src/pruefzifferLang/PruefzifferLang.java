@@ -1,0 +1,40 @@
+package pruefzifferLang;
+
+public class PruefzifferLang {
+
+	public static void main(String[] args) {
+		int zifferX2 = 0;
+		int querwert = 0;
+		int quersumme = 0;
+		int summeUngerade = 0;
+		int summeUngeQuer = 0;
+		int pruefziffer = 0;
+		int[] idZiffern = {6, 2, 5, 8, 4, 3, 1, 9, 7, 9};
+		
+		for (int i = 0; i > idZiffern.length - 1; i++) {
+			if(i % 2 == 0) {
+				zifferX2 = idZiffern[i] * 2;
+				System.out.println("Ziffer x 2 ist:\t" + zifferX2);
+				if(zifferX2 < 9) {
+					querwert = zifferX2;
+				} else {
+					querwert = zifferX2 - 9;
+				}
+				System.out.println("Querwert ist:\t" + querwert);
+				quersumme += querwert;
+			} else {
+				summeUngerade += idZiffern[i];
+			}
+		}
+		System.out.println("Summe Ziffern in ungerade stelle\t" + summeUngerade);
+		
+		summeUngeQuer = summeUngerade + quersumme;
+		System.out.println("Summe Ziffern ungeraderer stelle und quersumme der doppelten Werte der Ziffern der geraden Stellen\t" + summeUngeQuer);
+		
+		if(summeUngeQuer % 10 != 0) {
+			pruefziffer = summeUngeQuer - (summeUngeQuer % 10) + 10;
+		}
+		System.out.println("Die Pruefziffer ist:\t" + pruefziffer);
+		System.out.println("Die ID Pruefziffer ist gleich der Pruefziffer?\t" + (pruefziffer == idZiffern[idZiffern.length - 1]));
+	}
+}

@@ -1,0 +1,10 @@
+package pruefziffer;
+
+public class Pruefziffer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

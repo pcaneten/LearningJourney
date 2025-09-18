@@ -1,0 +1,6 @@
+package bruchtest;
+
+public class Bruch {
+	int zaehler;
+	int nenner;
+}

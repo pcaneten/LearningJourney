@@ -1,0 +1,15 @@
+package arraySchleifen;
+
+public class ArraySchleifen {
+
+	public static void main(String[] args) {
+		int schleifenZaehler = 0;
+		int[] zahlenArray = {2 ,7, 11, 30, 41, 42, 100, 200, 33, 45, 111, 1000};
+		while (schleifenZaehler < 10) {
+			System.out.println(schleifenZaehler + " " + zahlenArray[schleifenZaehler]);
+			schleifenZaehler--;
+		}
+
+	}
+
+}

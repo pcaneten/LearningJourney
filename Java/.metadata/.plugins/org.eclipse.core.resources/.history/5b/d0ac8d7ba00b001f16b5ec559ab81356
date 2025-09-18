@@ -1,0 +1,17 @@
+package uebung05;
+
+import javax.swing.*;
+
+public class Kreistest {
+
+	public static void main(String[] args) {
+		Kreis kreis1 = new Kreis();
+		
+		kreis1.radius = Double.parseDouble(JOptionPane.showInputDialog("Bitte geben Sie den Raidus eines Kreises ein"));
+		
+		kreis1.getRadius();
+		kreis1.getUmfang();
+		kreis1.getFlaeche();
+	}
+
+}

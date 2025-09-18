@@ -1,0 +1,19 @@
+package arraySchleifen;
+
+public class ArraySchleifen {
+
+	public static void main(String[] args) {
+		int schleifenZaehler = 0;
+		int total; 
+		// Anlegen fuellung des Arrays
+		int[] zahlenArray = {2 ,7, 11, 30, 41, 42, 100, 200, 33, 45, 111, 1000};
+		
+		// Schleife durch alle Elemente des Arrays
+		while (schleifenZaehler <= 11) {
+			total = zahlenArray[schleifenZaehler] + zahlenArray[schleifenZaehler];
+			schleifenZaehler++;
+		}
+		System.out.println("Die summe des Arrays ist: " + total);
+	}
+
+}

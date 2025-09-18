@@ -1,0 +1,20 @@
+package bruchtest;
+
+public class Bruchtest1 {
+
+	public static void main(String[] args) {
+		Bruch a = new Bruch();
+		a.zaehler = 3;
+		a.nenner = 4;
+		a.ausgeben();
+		a.kuerzen();
+		
+		Bruch b = new Bruch();
+		b.zaehler = 80;
+		b.nenner = 180;
+		b.ausgabeLang();
+		b.kuerzen();
+		
+
+	}
+}

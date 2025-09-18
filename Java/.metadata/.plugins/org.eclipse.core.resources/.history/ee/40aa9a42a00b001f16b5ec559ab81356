@@ -1,0 +1,10 @@
+package uebung05;
+
+public class Kreistest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

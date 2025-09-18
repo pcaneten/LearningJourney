@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Bahn</title>
+		<style>
+			body{
+				background-color:orange;
+			}
+			.content{
+				margin: 50px;
+			}
+		</style>
+		
+		<script src="https://code.jquery.com/jquery-latest.js"></script>
+		<script src="https://openlayers.org/api/OpenLayers.js"></script>
+		
+	</head>
+	<body>
+		<div class="content">
+			
+			<h1> Bahnhöfe </h1>
+			Bitte Stadt eingeben:<br> <input type="text" id="stadt" />
+			
+			<input type="button" value="Zeige den Banhof" id="lade" />
+			
+			<div id="testdata" style="background-color:red;display:none"></div>
+			<div id="testdata2" style="background-color:red;display:none"></div>
+			
+			<!--Div als Vorbereitung für die Map -->
+			<div id="container" style="display:flex;align-items:center;justify-content:center;margin.bottom:10vh">
+				
+				<div id="basicmap" style="width:85vh;height:85vh"></div>
+							
+			</div>
+			<script>
+			
+				function showOnMap(lat,lon){
+							
+					$("#basicmap").html(""); //bei jedem klick das alter weg
+					let zoom = 18;
+					
+					let map = new OpenLayers.Map("basicmap");
+													
+					let maplayer = new OpenLayers.Layer.OSM(
+						"OpenStreetMap",
+						[ 
+							'https://a.tile.openstreetmap.org/${z}/${x}/${y}.png',
+							'https://b.tile.openstreetmap.org/${z}/${x}/${y}.png',
+							'https://c.tile.openstreetmap.org/${z}/${x}/${y}.png'
+
+						],
+						null
+					);
+					
+					map.addLayer(maplayer);
+					// Spherical Mercator Projection -> EPSG:4326
+					
+					let lonlat = new OpenLayers.LonLat(lon,lat).transform(
+						new OpenLayers.Projection("EPSG:4326"),
+						map.getProjectionObject()				
+					);
+					
+					map.setCenter(lonlat, zoom);
+					
+				}
+				
+				//erst wenn die ganze Seite gelanden wurde
+				jQuery(function(){
+				
+					//hole den Eintrag aus dem Eingabefeld
+					$("#lade").click(function(){
+						
+						let s = $("#stadt").val();
+						
+						$.ajax({
+							method:"GET",
+							url:"https://v6.db.transport.rest/locations?query="+s+"&results=1"
+						
+						}).done(function(theData){
+							
+							
+							let lat = theData[0].location.latitude;
+							let lon = theData[0].location.longitude;
+							let bahnhof = theData[0].name;
+							
+							$("#testdata").text(bahnhof + ": ");
+							$("#testdata2").text(lat + " " + lon);
+							$("#testdata").fadeIn(3000);
+							$("#testdata2").fadeIn(3000);
+
+							
+							showOnMap(lat,lon);
+						});
+					
+					});
+									
+				});
+			
+			</script>
+		</div>	
+	</body>
+</html>

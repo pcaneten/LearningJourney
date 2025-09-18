@@ -1,0 +1,13 @@
+package bruchtest;
+
+public class Bruch {
+	int zaehler;
+	int nenner;
+	
+	void ausgeben() {
+		System.out.println(zaehler + "/" + nenner);
+	}
+	void ausgeben2() {
+		System.out.println("der Nenner des Bruchs " + nenner + " " + "der Zaehler des Bruchs " + zaehler);
+	}
+}

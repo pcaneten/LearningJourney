@@ -1,0 +1,16 @@
+package bruchtest;
+
+public class Bruchtest1 {
+
+	public static void main(String[] args) {
+		Bruch b = new Bruch();
+		b.zaehler = 3;
+		b.nenner = 4;
+		System.out.println("Bruch b= "+ b.zaehler + "/" + b.nenner);
+		Bruch a = new Bruch();
+		a.zaehler = b.zaehler;
+		b.nenner = b.nenner;
+		System.out.println("a == b ist:" + (a==b));
+
+	}
+}
