@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+    <% if (locals.title) {%>
+    <div class="d-flex flex-wrap justify-content-center py-3 mb-4">
+        <h1>Your Article <%= title%> has been Saved!</h1>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center py-3 mb-4">
+        <a class="btn btn-primary mx-2" href="article?nr=<%= articleNr %>" role="button">View</a>
+    </div>
+    <% } else { %>
+    <div>
+        <form method="POST">
+            <input class="form-control" type="text" placeholder="Title" name="title" required>
+            <div class="form-group py-2">
+                <label for="exampleFormControlTextarea1">Enter your text below</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write whatever you have in your mind..." name="userPost" required></textarea>
+            </div>
+            <button type="submit pt-1" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

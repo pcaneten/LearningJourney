@@ -1,0 +1,65 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="/images/randomImage.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome to your Personal Blog</h1>
+                <p class="lead">Here cou can manage your content, create your own post and categorize them into
+                    categories.
+                    The Blog is part of a Capstone Project of the Udemy course The Complete Web Development Bootcamp
+                    from Dr. Angela Yu.
+                </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="create">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Create a post</button>
+                    </a>
+                    <a href="https://www.google.com">
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Get me out of Here</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Latest creations</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">                
+                <h3 class="fs-2 text-body-emphasis"><%= title1 %></h3>
+                <p><%= articleText1 %></p> 
+                <a href="article?nr=<%= articleNr1 %>" class="icon-link">Continue reading
+                    <svg class="bi" aria-hidden="true">
+                        <use xlink:href="#chevron-right"></use>
+                    </svg> 
+                </a>
+            </div>
+            <% if (locals.title2 && locals.articleText2) { %>
+                <div class="feature col">                
+                    <h3 class="fs-2 text-body-emphasis"><%= title2 %></h3>
+                    <p><%= articleText2 %></p> 
+                    <a href="/article?nr=<%= articleNr2 %>" class="icon-link">Continue reading
+                        <svg class="bi" aria-hidden="true">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg> 
+                    </a>
+                </div>
+                <% if (locals.title3 && locals.articleText3) { %>
+                    <div class="feature col">               
+                        <h3 class="fs-2 text-body-emphasis"><%= title3 %></h3>
+                        <p><%= articleText3 %></p>
+                        <a href="article?nr=<%= articleNr3 %>" class="icon-link">Continue reading
+                            <svg class="bi" aria-hidden="true">
+                                <use xlink:href="#chevron-right"></use>
+                            </svg> 
+                        </a>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

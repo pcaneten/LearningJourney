@@ -1,0 +1,12 @@
+.herobg {
+    background-image: url(./assets/images/code_landscape.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+
+.bewerbungsfoto {
+    width: 20rem;
+    height: 30rem;
+    border-radius: 0.75rem;
+}
